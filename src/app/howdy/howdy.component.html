@@ -1,0 +1,30 @@
+<!-- <h2>{{question.name}}</h2> -->
+<!-- <div><span>id: </span>{{question.id}}</div> -->
+<!-- <div><span>name: </span>{{question.name}}</div> -->
+<!-- <div>
+    <label> Your answer:
+       <input [(ngModel)]="answer" placeholder="Answer">
+    </label>
+</div> -->
+<!-- 
+<h2>
+    My Questions!!!
+    <ul class="questions">
+        <li  *ngFor="let question of questions">
+            <span class="badge">{{question.id}}</span>{{question.name}}
+        </li>
+    </ul>
+</h2> -->
+
+<h2>
+    Random Question!!!<br>
+</h2>
+{{question.name}}
+<div>
+        <label> Your answer:
+           <input [(ngModel)]="answer" placeholder="Answer">
+        </label>
+</div>
+<button class="btn btn-danger" (click)="addAnswer(answer)" style="margin-left: 20px;">Save</button>
+<br>
+{{message}}
