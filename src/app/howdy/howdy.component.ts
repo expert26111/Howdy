@@ -10,7 +10,7 @@ import { QUESTIONS } from '../mock-questions';
 
 export class HowdyComponent implements OnInit {
 
-  answers : string[];
+ // answers : string[];
   answer: string;
   message: string;
   questions = QUESTIONS;
@@ -20,25 +20,30 @@ export class HowdyComponent implements OnInit {
 
   ngOnInit() {
      this.question = this.randomQuestion();
-     this.answers = [];
+   //  this.answers = [];
   }
 
   randomQuestion(): Questions {
-       let index =  Math.floor((Math.random() * this.questions.length-1) );
+       let index =  Math.floor((Math.random() * this.questions.length-1) + 1);
        this.question = this.questions[index];
        return this.questions[index];
   }
 
-  addAnswer(answer: string): void {
-     this.answers.push(answer);
-     
+
+  addAnswer(): void {
+    if(this.answer === undefined || this.answer === null || this.answer.trim().length === 0 )
+    {
+          alert(' Hey no empty answers!!!');
+          return;
+    }
+
      switch (this.question.id) {
       case 13: 
       this.message = ` Hey you really think ${this.answer} about programming `;
       break;    
       case 14:  
       this.message = ` You really do ${this.answer} Britney!!! `;
-      break
+      break;
       case 15: 
        if(this.answer === 'cake'){
         this.message = ` You really are such a  ${this.answer} person`;
